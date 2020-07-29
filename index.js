@@ -1,12 +1,27 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 const { promisify } = require("util");
 const fs = require("fs");
-
+const AWS = require("aws-sdk")
 const creds = require("./creds.json");
 const doc = new GoogleSpreadsheet(
   "1HkY4M5RRqBhcj9-vPPH5Bp7dAaPj46g3tHky4Fos_-o"
 );
 var og = require("open-graph");
+
+AWS.config.update({
+  accessKeyId: process.env.AWS_ACCESS,
+  secretAccessKey: process.env.AWS_SECRET,
+  region: process.env.AWS_REGION
+})
+
+s3 = new AWS.S3({
+  apiVersion: "2006-03-01"
+})
+const uploadParams = {
+  Bucket: process.env.AWS_BUCKET,
+  Key: "",
+  Body: ""
+}
 
 let jsonArr = [];
 
@@ -48,8 +63,8 @@ function printArticle(article, i, arr) {
 
 async function accessSpreadsheet() {
   await doc.useServiceAccountAuth({
-    client_email: creds.client_email,
-    private_key: creds.private_key,
+    client_email: process.env.CLIENT_EMAIL,
+    private_key: process.env.PRIVATE_KEY,
   });
 
   await doc.loadInfo(); // loads document properties and worksheets
