@@ -9,6 +9,7 @@
   "author": "Niv Suresh",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "google-spreadsheet": "^3.0.11",
     "open-graph": "^0.2.4"
   }
