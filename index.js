@@ -71,8 +71,8 @@ function printArticle(article, i, arr) {
 async function accessSpreadsheet() {
   console.log(process.env.GOOGLE_CREDENTIALS);
   await doc.useServiceAccountAuth({
-    client_email: JSON.parse(process.env.GOOGLE_CREDENTIALS.client_email),
-    private_key: JSON.parse(process.env.GOOGLE_CREDENTIALS.private_key),
+    client_email: process.env.GOOGLE_CREDENTIALS.client_email,
+    private_key: process.env.GOOGLE_CREDENTIALS.private_key,
   });
 
   await doc.loadInfo(); // loads document properties and worksheets
