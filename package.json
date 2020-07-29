@@ -1,0 +1,15 @@
+{
+  "name": "ft-article-meta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Niv Suresh",
+  "license": "ISC",
+  "dependencies": {
+    "google-spreadsheet": "^3.0.11",
+    "open-graph": "^0.2.4"
+  }
+}
