@@ -1,15 +1,9 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-const { promisify } = require("util");
-const fs = require("fs");
 const AWS = require("aws-sdk");
-const creds = require("./creds.json");
 const doc = new GoogleSpreadsheet(
   "1HkY4M5RRqBhcj9-vPPH5Bp7dAaPj46g3tHky4Fos_-o"
 );
 const og = require("open-graph");
-const schedule = require("node-schedule");
-
-require("dotenv").config();
 
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS,
