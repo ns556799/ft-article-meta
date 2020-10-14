@@ -39,6 +39,8 @@ function printArticle(article, i, arr) {
     if (typeof meta.image !== "undefined") {
       const img = meta.image.url;
 
+      console.log(meta)
+
       const arr = {
         url,
         month,
