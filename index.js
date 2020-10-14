@@ -38,7 +38,7 @@ function printArticle(article, i, arr) {
     if (typeof meta.image !== "undefined") {
       const img = meta.image.url;
       const title = metal.title
-
+      console.log(title)
 
       const arr = {
         url,
