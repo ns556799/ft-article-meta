@@ -31,6 +31,8 @@ function printArticle(article, i, arr) {
   const type = article.Type;
   const contentType = article.Content;
   const author = article.Author;
+  const sector = article.Sector;
+
   og(url, (err, meta) => {
     if (typeof meta.image !== "undefined") {
       const img = meta.image.url;
@@ -44,6 +46,7 @@ function printArticle(article, i, arr) {
         contentType,
         img,
         author,
+        sector,
       };
       jsonArr.push(arr);
 
