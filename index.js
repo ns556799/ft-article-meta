@@ -30,7 +30,7 @@ function printArticle(article, i, arr) {
   const client = article.Advertiser;
   const type = article.Type;
   const contentType = article.Content;
-
+  const author = article.Author;
   og(url, (err, meta) => {
     if (typeof meta.image !== "undefined") {
       const img = meta.image.url;
@@ -43,6 +43,7 @@ function printArticle(article, i, arr) {
         type,
         contentType,
         img,
+        author,
       };
       jsonArr.push(arr);
 
