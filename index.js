@@ -37,8 +37,7 @@ function printArticle(article, i, arr) {
   og(url, (err, meta) => {
     if (typeof meta.image !== "undefined") {
       const img = meta.image.url;
-      const title = metal.title
-      console.log(title)
+      const title = meta.title
 
       const arr = {
         url,
