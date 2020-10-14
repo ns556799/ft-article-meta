@@ -33,19 +33,19 @@ function printArticle(article, i, arr) {
   const author = article.Author;
   const sector = article.Sector;
 
-  console.log(article);
 
   og(url, (err, meta) => {
     if (typeof meta.image !== "undefined") {
       const img = meta.image.url;
+      const title = metal.title
 
-      console.log(meta)
 
       const arr = {
         url,
         month,
         year,
         client,
+        title,
         type,
         contentType,
         img,
