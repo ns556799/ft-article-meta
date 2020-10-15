@@ -1,4 +1,5 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
+const v4  = require("uuid");
 const AWS = require("aws-sdk");
 const doc = new GoogleSpreadsheet(
   "1HkY4M5RRqBhcj9-vPPH5Bp7dAaPj46g3tHky4Fos_-o"
@@ -38,10 +39,11 @@ function printArticle(article, i, arr) {
     if (typeof meta.image !== "undefined") {
       const img = meta.image.url;
       const title = meta.title
-
+      const id =  v4 ()
       console.log(title)
 
       const arr = {
+        id,
         url,
         month,
         year,
